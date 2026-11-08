@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 
 function Todos() {
@@ -33,6 +32,8 @@ function Todos() {
   function handleDelete(id) {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
+  
+  const itemsLeft = todos.filter((todo) => !todo.completed).length
 
   return (
     <section className="mx-auto max-w-[550px]">
@@ -101,7 +102,8 @@ function Todos() {
 
         <footer className="grid h-10 grid-cols-3 items-center border-t border-[#e6e6e6] px-[15px] text-[15px]">
           <span>
-            <strong className="font-light">1</strong> item left
+            <strong className="font-light">{itemsLeft}</strong> {itemsLeft === 1 ? 'item' : 'items'} left
+            {/* <strong className="font-light">{itemsLeft}</strong> item left */}
           </span>
 
           <ul className="flex justify-center gap-1">
@@ -170,33 +172,8 @@ export default Todos
 
 
 
+//Part 1 is done below
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//last step ani is 7
 
 // import { useState } from 'react'
 
@@ -345,7 +322,6 @@ export default Todos
 // }
 
 // export default Todos
-
 
 
 
